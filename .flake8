@@ -1,0 +1,16 @@
+[flake8]
+count=True
+statistics=True
+show-source=True
+
+application-import-names=meter
+
+max-line-length=120
+import-order-style=smarkets
+docstring-convention=pep257
+
+exclude = versions
+
+ignore=
+    # W503 line break before binary operator - https://www.flake8rules.com/rules/W503.html
+    W503
