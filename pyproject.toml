@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "pv-simulator"
+version = "0.1.0"
+description = ""
+authors = ["RandyRomero <a.ya.miheev@gmail.com>"]
+readme = "README.md"
+packages = [{include = "pv_simulator"}]
+
+[tool.isort]
+line_length = 120
+multi_line_output = "3"
+skip = "versions"
+include_trailing_comma = "true"
+known_first_party = ["meter"]
+sections = ['FUTURE', 'STDLIB', 'THIRDPARTY', 'FIRSTPARTY', 'LOCALFOLDER']
+default_section="THIRDPARTY"
+order_by_type="false"
+
+
+[tool.black]
+line-length = 120
+exclude = '''
+(
+  /(
+      \.git
+    | versions
+  )/
+)
+'''
+
+[tool.poetry.dependencies]
+python = "^3.11"
+aio-pika = "^9.0.5"
+pydantic = "^1.10.6"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.1.0"
+mypy = "^1.1.1"
+isort = "^5.12.0"
+flake8 = "^6.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
